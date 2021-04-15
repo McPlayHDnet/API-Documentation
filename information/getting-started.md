@@ -18,15 +18,15 @@ By requesting a page with authentication you need to add the query parameter **?
 
 Do not abuse our API.  
 This also includes not using our API for getting UUID by player name and vice versa. Use the official [Mojang API](https://api.mojang.com/) for that.  
-We are free to remove your access to our API at any time if we think you are abusing our system.
+We are free to revoke your access to our API at any time if we think you are abusing our system.
 
 ## Rate limit
 
-The rate limit is no fixed value and can be changed on request
+The rate limit is not a fixed value and can be changed on request with a valid reason.
 
 ### Default
 
-60 requests in 60 seconds
+The default rate limit is 60 requests in 60 seconds.
 
 ### Status
 

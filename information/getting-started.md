@@ -6,7 +6,7 @@ description: A tutorial in how to use the API
 
 ## Beta
 
-This API is still under development and the layouts of the responses might change several times until the final release. All users during beta should know that the API might be unavailable at any point in time and structurally change spontaneously. 
+This API is still under development and the layouts of the responses might change several times until the final release. All users during beta should know that the API might be unavailable at any point in time and structurally change spontaneously.
 
 ## Token
 
@@ -30,7 +30,7 @@ The rate limit is no fixed value and can be changed on request
 
 ### Status
 
-You can always view your current rate by calling the [**main page**](#main-page-and-api-info) with your token as a parameter.  
+You can always view your current rate by calling the [**main page**](getting-started.md#main-page-and-api-info) with your token as a parameter.  
 This action won't increase your rate.
 
 {% api-method method="get" host="https://mcplayhd.net/api/" path="?token={token}" %}
@@ -58,20 +58,20 @@ Your personal API token
 data will be a message and if authenticated your API user info else null
 {% endapi-method-response-example-description %}
 
-```
+```yaml
 {
   "status" : 200,
-  "path" : "<string: current path>",
-  "timeStamp" : "<string: current time stamp>",
+  "path" : "<string - current path>",
+  "timeStamp" : "<string - current time stamp>",
   "data" : {
-    "message" : "<string: API information message>",
-    "authenticated" : "<boolean: true if you pass a valid token as query parameter>",
-    "user" : { // will be null if you are not authenticated
-      "uuid" : "<string: your Minecraft UUID>",
-      "rank" : "<string: your API rank>",
-      "rateLimit" : <int: your rate limit>,
-      "rateLimitTimeMs" : <int: the time for your rate limit to reset>,
-      "currentRate" : <int: your current request rate>
+    "message" : "<string - API information message>",
+    "authenticated" : <boolean - true if you pass a valid token as query parameter>,
+    "user" : { # will be null if you are not authenticated
+      "uuid" : "<string - your Minecraft UUID>",
+      "rank" : "<string - your API rank>",
+      "rateLimit" : <int - your rate limit>,
+      "rateLimitTimeMs" : <int - the time for your rate limit to reset>,
+      "currentRate" : <int - your current request rate>
     }
   }
 }

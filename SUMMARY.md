@@ -4,10 +4,8 @@
 
 ## Information
 
----
-
-* [Getting Started](getting-started.md)
-* [Changelog](changelog.md)
+* [Getting Started](information/getting-started.md)
+* [Changelog](information/changelog.md)
 
 ## Stats
 

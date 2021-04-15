@@ -29,7 +29,7 @@ Get a list of all FastBuilder modes
   "timeStamp" : "<string - current time stamp>",
   "processingTime" : <long - time to process the action in ms>,
   "data" : {
-    "modes" : [ "<string[] - list if modes>" ]
+    "modes" : [ "<string[] - list of modes>" ]
   }
 }
 ```

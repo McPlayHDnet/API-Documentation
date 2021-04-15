@@ -8,7 +8,7 @@ description: Important changes will be listed here
 
 ### Added
 
-* FastBuilder top pages for all modes
+* FastBuilder top pages
 
 ## 0.0.2 - 2021/04/15
 

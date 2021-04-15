@@ -37,7 +37,7 @@ Your authentication token.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Returns the player's stats and his group if he played the game so far.
 {% endapi-method-response-example-description %}
 
 ```yaml

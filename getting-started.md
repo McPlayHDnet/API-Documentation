@@ -30,7 +30,7 @@ The rate limit is no fixed value and can be changed on request
 
 ### Status
 
-You can always view your current rate by calling the **main page** with your token as a parameter.  
+You can always view your current rate by calling the [**main page**](#main-page-and-api-info) with your token as a parameter.  
 This action won't increase your rate.
 
 {% api-method method="get" host="https://mcplayhd.net/api/" path="?token={token}" %}

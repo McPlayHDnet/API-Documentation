@@ -63,6 +63,7 @@ data will be a message and if authenticated your API user info else null
   "status" : 200,
   "path" : "<string - current path>",
   "timeStamp" : "<string - current time stamp>",
+  "processingTime" : "<long - time to process the action>",
   "data" : {
     "message" : "<string - API information message>",
     "authenticated" : <boolean - true if you pass a valid token as query parameter>,
@@ -80,4 +81,8 @@ data will be a message and if authenticated your API user info else null
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+{% hint style="info" %}
+This action costs **0** rate requests.
+{% endhint %}
 

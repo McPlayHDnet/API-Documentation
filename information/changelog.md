@@ -4,6 +4,19 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.0.4 - 2021/04/15
+
+### Added
+
+* `processTime` to the response
+* FastBuilder modes list, global mode stats, global stats, global player stats
+
+### Changed
+
+* Path to FastBuilder API from `/stats/fastbuilder` to solely `fastbuilder` 
+
+
+
 ## 0.0.3 - 2021/04/15
 
 ### Added

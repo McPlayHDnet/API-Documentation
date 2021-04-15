@@ -4,7 +4,45 @@ description: Requesting FastBuilder stats
 
 # FastBuilder
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/player/{player}/?token={token}" %}
+{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/modes" %}
+{% api-method-summary %}
+List of modes
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Get a list of all FastBuilder modes
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```yaml
+{
+  "status" : 200,
+  "path" : "<string - current path>",
+  "timeStamp" : "<string - current time stamp>",
+  "processingTime" : "<long - time to process the action>",
+  "data" : {
+    "modes" : [ "<string[] - list if modes>" ]
+  }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% hint style="info" %}
+This action costs **0** rate requests.
+{% endhint %}
+
+{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats/{player}?token={token}" %}
 {% api-method-summary %}
 Get stats by UUID or Name
 {% endapi-method-summary %}
@@ -45,6 +83,7 @@ Returns the player's stats and his group if he played the game so far.
   "status" : 200,
   "path" : "<string - current path>",
   "timeStamp" : "<string - current time stamp>",
+  "processingTime" : "<long - time to process the action>",
   "data" : { # will be null if the player has not played this game
     "playerInfo" : {
       "uuid" : "<string - UUID of the player>",
@@ -72,14 +111,13 @@ Returns the player's stats and his group if he played the game so far.
 This action costs **1** rate request.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/top/?token={token}" %}
+{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/top?token={token}" %}
 {% api-method-summary %}
 Get top stats
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns a map of top FastBuilder players by **mode** as &lt;**rank**, **statsObject**&gt;  
-The format of the statsObject is the same as in **Get stats by UUID or Name**
+Returns a map of top FastBuilder players by **mode** as **\[rank, statsObject\]**
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -108,6 +146,7 @@ Your authentication token.
   "status" : 200,
   "path" : "<string - current path>",
   "timeStamp" : "<string - current time stamp>",
+  "processingTime" : "<long - time to process the action>",
   "data" : {
     "top" : {
       "1" : {

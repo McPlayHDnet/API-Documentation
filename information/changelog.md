@@ -4,6 +4,12 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.0.3 - 2021/04/15
+
+### Added
+
+* FastBuilder top pages for all modes
+
 ## 0.0.2 - 2021/04/15
 
 ### Added

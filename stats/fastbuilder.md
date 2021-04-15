@@ -98,8 +98,36 @@ Your authentication token.
 
 {% endapi-method-response-example-description %}
 
-```
-
+```yaml
+{
+  "status" : 200,
+  "path" : "<string - current path>",
+  "timeStamp" : "<string - current time stamp>",
+  "data" : {
+    "top" : {
+      "1" : {
+        "playerInfo" : {
+          "uuid" : "<string - UUID of the player>",
+          "name" : "<string - name of the player>",
+          "group" : "<string - group of the player>"
+        },
+        "stats" : {
+          "games" : <int - games played>,
+          "wins" : <int - games won>,
+          "blocks" : <long - blocks placed>,
+          "timeBest" : <long - best time>,
+          "timeTotal" : <long - total time of all wins>,
+          "confirmed" : <boolean - if best time is confirmed>,
+          "speedrunConfirmed" : <boolean - if best time is speedrun confirmed>
+        }
+      },
+      "2" : {
+        # Same as above
+      },
+      # Many more of the above
+    }
+  }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -107,5 +135,6 @@ Your authentication token.
 {% endapi-method %}
 
 {% hint style="warning" %}
-This action costs 10 rate requests.
+This action costs **10** rate requests.
 {% endhint %}
+

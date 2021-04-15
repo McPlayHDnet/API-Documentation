@@ -76,9 +76,6 @@ Get top stats
 {% api-method-description %}
 Returns a map of top FastBuilder players by **mode** as &lt;**rank**, **statsObject**&gt;
 {% endapi-method-description %}
-{% hint style="warning" %}
-This action costs 10 rate requests.
-{% endhint %}
 
 {% api-method-spec %}
 {% api-method-request %}

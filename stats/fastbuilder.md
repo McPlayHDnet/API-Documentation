@@ -79,7 +79,7 @@ Get top stats
 
 {% api-method-description %}
 Returns a map of top FastBuilder players by **mode** as &lt;**rank**, **statsObject**&gt;  
-The format of the statsObject are the same as in \[Get stats by UUID or Name\]\(get-stats-by-uuid-or-name\)
+The format of the statsObject are the same as in [**Get stats by UUID or Name**](get-stats-by-uuid-or-name)
 {% endapi-method-description %}
 
 {% api-method-spec %}

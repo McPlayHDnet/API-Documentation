@@ -4,7 +4,7 @@ description: Requesting FastBuilder stats
 
 # FastBuilder
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/player/{player}" %}
+{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/player/{player}/?token={token}" %}
 {% api-method-summary %}
 Get stats by UUID or Name
 {% endapi-method-summary %}
@@ -68,5 +68,41 @@ Returns the player's stats and his group if he played the game so far.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/top/?token={token}" %}
+{% api-method-summary %}
+Get top stats
+{% endapi-method-summary %}
 
+{% api-method-description %}
+Returns a map of top FastBuilder players by **mode** as &lt;**rank**, **statsObject**&gt;
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="mode" type="string" required=true %}
+FastBuilder mode you want to get the stats of.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="token" type="string" required=true %}
+Your authentication token.
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 

@@ -37,28 +37,28 @@ Your authentication token.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-data will be a StatsObject if exists or "null" if the player never played this game
+
 {% endapi-method-response-example-description %}
 
-```
+```yaml
 {
   "status" : 200,
-  "path" : "<string: current path>",
-  "timeStamp" : "<string: current time stamp>",
-  "data" : {
+  "path" : "<string - current path>",
+  "timeStamp" : "<string - current time stamp>",
+  "data" : { # will be null if the player has not played this game
     "playerInfo" : {
-      "uuid" : "<string: UUID of the player>",
-      "name" : "<string: name of the player>",
-      "group" : "<string: group of the player>"
+      "uuid" : "<string - UUID of the player>",
+      "name" : "<string - name of the player>",
+      "group" : "<string - group of the player>"
     },
     "stats" : {
-      "games" : <int: games played>,
-      "wins" : <int: games won>,
-      "blocks" : <long: blocks placed>,
-      "timeBest" : <long: best time>,
-      "timeTotal" : <long: total time of all wins>,
-      "confirmed" : <boolean: if best time is confirmed>,
-      "speedrunConfirmed" : <boolean: if best time is speedrun confirmed>
+      "games" : <int - games played>,
+      "wins" : <int - games won>,
+      "blocks" : <long - blocks placed>,
+      "timeBest" : <long - best time>,
+      "timeTotal" : <long - total time of all wins>,
+      "confirmed" : <boolean - if best time is confirmed>,
+      "speedrunConfirmed" : <boolean - if best time is speedrun confirmed>
     }
   }
 }

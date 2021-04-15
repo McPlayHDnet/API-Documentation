@@ -44,7 +44,7 @@ This action costs **0** rate requests.
 
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats/{player}?token={token}" %}
 {% api-method-summary %}
-Stats of player and mode
+Stats by player and mode
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -57,7 +57,7 @@ If you want to get the average time you need to divide the **totalTime** by the 
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="mode" type="string" required=true %}
-FastBuilder mode you want to get the stats of
+mode you want to get the stats of
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="player" type="string" required=true %}
@@ -124,7 +124,7 @@ Returns a map of top FastBuilder players by **mode** as **\[rank, statsObject\]*
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="mode" type="string" required=true %}
-FastBuilder mode you want to get the stats of
+mode you want to get the stats of
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -234,7 +234,7 @@ Global stats of player
 {% endapi-method-summary %}
 
 {% api-method-description %}
-games
+Returns the sum of all games, wins and blocks placed in FastBuilder by a player. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -278,5 +278,59 @@ your authentication token
 
 {% hint style="info" %}
 This action costs **2** rate requests.
+{% endhint %}
+
+
+
+{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats?token={token}" %}
+{% api-method-summary %}
+Global stats of mode
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns the sum of all games, wins and blocks placed in a certain FastBuilder mode.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="mode" type="string" required=true %}
+mode you want to get the stats from
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="token" type="string" required=true %}
+your authentication token 
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```yaml
+{
+  "status" : 200,
+  "path" : "<string - current path>",
+  "timeStamp" : "<string - current time stamp>",
+  "processingTime" : <long - time to process the action in ms>,
+  "data" : {
+    "games" : <long - total games played>,
+    "wins" : <long - total wins>,
+    "blocks" : <long - total blocks placed>
+  }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% hint style="warning" %}
+This action costs **10** rate requests.
 {% endhint %}
 

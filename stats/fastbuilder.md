@@ -44,7 +44,7 @@ This action costs **0** rate requests.
 
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats/{player}?token={token}" %}
 {% api-method-summary %}
-Stats by UUID or Name of mode
+Stats of player and mode
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -230,7 +230,7 @@ This action costs **20** rate requests.
 
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/stats/{player}?token={token}" %}
 {% api-method-summary %}
-
+Global stats of player
 {% endapi-method-summary %}
 
 {% api-method-description %}

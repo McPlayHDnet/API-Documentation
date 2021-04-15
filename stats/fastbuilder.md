@@ -109,3 +109,6 @@ Your authentication token.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% hint style="warning" %}
+This action costs 10 rate requests.
+{% endhint %}

@@ -47,7 +47,7 @@ If you provide your token, you can see your UUID, rank, rate-limit, rate-limit r
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="token" type="string" required=false %}
-Your personal API token
+your authentication token
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

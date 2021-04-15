@@ -68,6 +68,10 @@ Returns the player's stats and his group if he played the game so far.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% hint style="info" %}
+This action costs **1** rate request.
+{% endhint %}
+
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/top/?token={token}" %}
 {% api-method-summary %}
 Get top stats

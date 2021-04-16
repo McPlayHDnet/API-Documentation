@@ -38,7 +38,7 @@ Get a list of all FastBuilder modes
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This action costs **0** rate requests.
 {% endhint %}
 
@@ -107,10 +107,6 @@ your authentication token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="info" %}
-This action costs **1** rate request.
-{% endhint %}
-
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/top?token={token}" %}
 {% api-method-summary %}
 Top stats of mode
@@ -178,8 +174,8 @@ your authentication token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="warning" %}
-This action costs **10** rate requests.
+{% hint style="info" %}
+These stats will update every **10** seconds.
 {% endhint %}
 
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/stats?token={token}" %}
@@ -224,8 +220,8 @@ your authentication token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="warning" %}
-This action costs **20** rate requests.
+{% hint style="info" %}
+ These stats will update every **10** seconds.
 {% endhint %}
 
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/stats/{player}?token={token}" %}
@@ -276,11 +272,9 @@ your authentication token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This action costs **2** rate requests.
 {% endhint %}
-
-
 
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats?token={token}" %}
 {% api-method-summary %}
@@ -319,9 +313,14 @@ your authentication token
   "timeStamp" : "<string - current time stamp>",
   "processingTime" : <long - time to process the action in ms>,
   "data" : {
-    "games" : <long - total games played>,
-    "wins" : <long - total wins>,
-    "blocks" : <long - total blocks placed>
+    "sums" : {
+      "games" : <long - total games played>,
+      "wins" : <long - total wins>,
+      "blocks" : <long - total blocks placed>
+    },
+    "distribution" : {
+      <map[long, int] - [best time, amount of players]>
+    }
   }
 }
 ```
@@ -330,7 +329,7 @@ your authentication token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="warning" %}
-This action costs **10** rate requests.
+{% hint style="info" %}
+These stats will update every **10** seconds.
 {% endhint %}
 

@@ -28,6 +28,10 @@ The rate limit is not a fixed value and can be changed on request with a valid r
 
 The default rate limit is 60 requests in 60 seconds.
 
+### Cost
+
+By default, requests will cost 1 rate request. If an API request costs more or less there will be a warning below the corresponding API method documentation.
+
 ### Status
 
 You can always view your current rate by calling the [**main page**](getting-started.md#main-page-and-api-info) with your token as a parameter.  
@@ -82,7 +86,7 @@ data will be a message and if authenticated your API user info else null
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This action costs **0** rate requests.
 {% endhint %}
 

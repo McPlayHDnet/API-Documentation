@@ -4,6 +4,17 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.0.6 - 2021/04/16
+
+### Added
+
+* You can now request players information.
+
+### Fixed
+
+* If there are two or more players with the same name in the Database \(yes, that can happen and is totally fine\) the API will fetch the new names of all players and return the correct one \(if there still is a player with that name after the cleanup\).
+* The Top-Player updater would still use the main MySQL connection resulting in a regular lag of 0.5s every 10 seconds.
+
 ## 0.0.5 - 2021/04/16
 
 ### Added

@@ -11,3 +11,7 @@
 
 * [FastBuilder](stats/fastbuilder.md)
 
+## Player
+
+* [Player Info](player/player-info.md)
+

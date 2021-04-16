@@ -48,7 +48,7 @@ Stats by player and mode
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get the FastBuilder stats of a player by their **UUID or Name**.  
+Get the FastBuilder stats of a player by their **UUID or name**.  
 All times are in Milliseconds.  
 If you want to get the average time you need to divide the **totalTime** by the **wins**
 {% endapi-method-description %}

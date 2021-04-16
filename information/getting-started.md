@@ -4,9 +4,9 @@ description: A tutorial in how to use the API
 
 # Getting Started
 
-## Beta
+## Alpha
 
-This API is still under development and the layouts of the responses might change several times until the final release. All users during beta should know that the API might be unavailable at any point in time and structurally change spontaneously.
+This API is still under development and the layouts of the responses might change several times until the final release. All users during alpha should know that the API might be unavailable at any point in time and structurally change spontaneously.
 
 ## Token
 

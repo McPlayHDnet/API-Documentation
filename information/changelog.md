@@ -12,7 +12,7 @@ description: Important changes will be listed here
 
 ### Changed
 
-* All global stats as mode stats and top stats are now cached and will only update every 10 seconds but therefore they will only cost one rate request
+* All global stats as mode stats and top stats are now cached and will only update every 10 seconds but therefore they will only cost one rate request.
 
 ### Fixed
 

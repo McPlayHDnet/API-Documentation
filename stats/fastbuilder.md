@@ -318,6 +318,7 @@ your authentication token
       "wins" : <long - total wins>,
       "blocks" : <long - total blocks placed>
     },
+    "maxConfirmedTime" : <long - max time that will have to be confirmed until showing up in the chart>,
     "distribution" : {
       <map[long, int] - [best time, amount of players]>
     }

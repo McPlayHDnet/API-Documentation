@@ -4,44 +4,6 @@ description: Requesting FastBuilder stats
 
 # FastBuilder
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/modes" %}
-{% api-method-summary %}
-List of modes
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Get a list of all FastBuilder modes
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```yaml
-{
-  "status" : 200,
-  "path" : "<string - current path>",
-  "timeStamp" : "<string - current time stamp>",
-  "processingTime" : <long - time to process the action in ms>,
-  "data" : {
-    "modes" : [ "<string[] - list of modes>" ]
-  }
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% hint style="warning" %}
-This action costs **0** rate requests.
-{% endhint %}
-
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats/{player}?token={token}" %}
 {% api-method-summary %}
 Stats by player and mode
@@ -334,3 +296,40 @@ your authentication token
 These stats will update every **10** seconds.
 {% endhint %}
 
+{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/modes" %}
+{% api-method-summary %}
+List of modes
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Get a list of all FastBuilder modes
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```yaml
+{
+  "status" : 200,
+  "path" : "<string - current path>",
+  "timeStamp" : "<string - current time stamp>",
+  "processingTime" : <long - time to process the action in ms>,
+  "data" : {
+    "modes" : [ "<string[] - list of modes>" ]
+  }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% hint style="warning" %}
+This action costs **0** rate requests.
+{% endhint %}

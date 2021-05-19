@@ -10,6 +10,7 @@
 ## Stats
 
 * [FastBuilder](stats/fastbuilder.md)
+* [Minesweeper](stats/minesweeper.md)
 
 ## Player
 

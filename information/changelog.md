@@ -4,6 +4,12 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.0.7 - 2021/05/19
+
+### Added
+
+* Minesweeper statistics
+
 ## 0.0.6 - 2021/04/16
 
 ### Added

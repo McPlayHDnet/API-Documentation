@@ -4,6 +4,16 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.0.8 - 2021/05/20
+
+### Changed
+
+* Minesweeper "Global stats \(and of season\)" will no longer return the season in the body because you have to specify the season as path variable if you want to get a specific season and therefore the information is unnecessary.
+
+### Fixed
+
+* I was able to restore the "mines" defused in season 1.
+
 ## 0.0.7 - 2021/05/19
 
 ### Added

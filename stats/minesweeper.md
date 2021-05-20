@@ -71,10 +71,6 @@ Cake successfully retrieved.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="info" %}
-For **season 1**, the **mines** were not recorded. For the "all"-seasons stats we just set the number of mines defused of the first season to 0.
-{% endhint %}
-
 {% hint style="warning" %}
 Requesting "all" season stats of a player costs **2** rate requests.
 {% endhint %}
@@ -187,7 +183,6 @@ number of the season \["1", "2", ...\] or \["-1", "all"\] for the sum of all sea
   "timeStamp" : "<string - current time stamp>",
   "processingTime" : <long - time to process the action in ms>,
   "data" : {
-    "season" : <int - requested season or -1 for all seasons>,
     "games" : <int - games played>,
     "wins" : <int - games won>,
     "mines" : <int - mines defused>
@@ -198,10 +193,6 @@ number of the season \["1", "2", ...\] or \["-1", "all"\] for the sum of all sea
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-{% hint style="info" %}
-For **season 1**, the **mines** were not recorded. For the "all"-seasons stats we just set the number of mines defused of the first season to 0.
-{% endhint %}
 
 {% hint style="info" %}
 These stats will update every **10** seconds.

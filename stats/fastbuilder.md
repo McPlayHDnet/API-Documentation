@@ -183,7 +183,7 @@ your authentication token
 {% endapi-method %}
 
 {% hint style="info" %}
- These stats will update every **10** seconds.
+These stats will update every **10** seconds.
 {% endhint %}
 
 {% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/stats/{player}?token={token}" %}
@@ -192,7 +192,7 @@ Global stats of player
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns the sum of all games, wins and blocks placed in FastBuilder by a player. 
+Returns the sum of all games, wins and blocks placed in FastBuilder by a player.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -257,7 +257,7 @@ mode you want to get the stats from
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="token" type="string" required=true %}
-your authentication token 
+your authentication token
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -333,3 +333,4 @@ Get a list of all FastBuilder modes
 {% hint style="warning" %}
 This action costs **0** rate requests.
 {% endhint %}
+

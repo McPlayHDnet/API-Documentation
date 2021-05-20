@@ -198,7 +198,7 @@ number of the season \["1", "2", ...\] or \["-1", "all"\] for the sum of all sea
 These stats will update every **10** seconds.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/season" %}
+{% api-method method="get" host="https://mcplayhd.net/api" path="/minesweeper/season" %}
 {% api-method-summary %}
 Current season
 {% endapi-method-summary %}

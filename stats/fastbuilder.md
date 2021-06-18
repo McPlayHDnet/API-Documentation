@@ -37,7 +37,7 @@ your authentication token
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Response if the player has played the specific game mode
 {% endapi-method-response-example-description %}
 
 ```yaml
@@ -46,7 +46,7 @@ your authentication token
   "path" : "<string - current path>",
   "timeStamp" : "<string - current time stamp>",
   "processingTime" : <long - time to process the action in ms>,
-  "data" : { # will be null if the player has not played this game
+  "data" : { 
     "playerInfo" : {
       "uuid" : "<string - UUID of the player>",
       "name" : "<string - name of the player>",
@@ -62,6 +62,22 @@ your authentication token
       "speedrunConfirmed" : <boolean - if best time is speedrun confirmed>
     }
   }
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=204 %}
+{% api-method-response-example-description %}
+Response if the player has not played the specific game mode
+{% endapi-method-response-example-description %}
+
+```yaml
+{
+  "status" : 204,
+  "path" : "<string - current path>",
+  "timeStamp" : "<string - current time stamp>",
+  "processingTime" : <long - time to process the action in ms>,
+  "data" : null
 }
 ```
 {% endapi-method-response-example %}

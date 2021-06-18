@@ -4,6 +4,12 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.0.9 - 2021/06/18
+
+### Changed
+
+* If a request returns "null" as data \(e.g. the player has been on the server but has never played that specific game you are requesting their stats\) then the status of the request will be "204 - No Content" in order to avoid NullPointerException's in your code by simply asking if the status is 204.
+
 ## 0.0.8 - 2021/05/20
 
 ### Changed

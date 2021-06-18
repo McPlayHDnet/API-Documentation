@@ -39,7 +39,7 @@ number of the season \["1", "2", ...\] or \["-1","all"\] for a sum of games, win
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+Response if the player has stats in that season.
 {% endapi-method-response-example-description %}
 
 ```yaml
@@ -64,6 +64,22 @@ Cake successfully retrieved.
       "mines" : <int - mines defused>
     }
   }
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=204 %}
+{% api-method-response-example-description %}
+Response if the player has no stats in that season.
+{% endapi-method-response-example-description %}
+
+```yaml
+{
+  "status" : 204,
+  "path" : "<string - current path>",
+  "timeStamp" : "<string - current time stamp>",
+  "processingTime" : <long - time to process the action in ms>,
+  "data" : null
 }
 ```
 {% endapi-method-response-example %}

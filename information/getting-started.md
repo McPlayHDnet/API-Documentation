@@ -16,8 +16,8 @@ By requesting a page with authentication you need to add the query parameter **?
 
 ## Abuse
 
-Do not abuse our API.  
-This also includes not using our API for getting UUID by player name and vice versa. Use the official [Mojang API](https://api.mojang.com/) for that.  
+Do not abuse our API.\
+This also includes not using our API for getting UUID by player name and vice versa. Use the official [Mojang API](https://api.mojang.com) for that.\
 We are free to revoke your access to our API at any time if we think you are abusing our system.
 
 ## Rate limit
@@ -34,34 +34,24 @@ By default, requests will cost 1 rate request. If an API request costs more or l
 
 ### Status
 
-You can always view your current rate by calling the [**main page**](getting-started.md#main-page-and-api-info) with your token as a parameter.  
+You can always view your current rate by calling the [**main page**](getting-started.md#main-page-and-api-info) with your token as a parameter.\
 This action won't increase your rate.
 
-{% api-method method="get" host="https://mcplayhd.net/api/" path="?token={token}" %}
-{% api-method-summary %}
-​Main page & API info
-{% endapi-method-summary %}
+{% swagger baseUrl="https://mcplayhd.net/api/" path="?token={token}" method="get" summary="​Main page & API info" %}
+{% swagger-description %}
+This is the main page of the API with a welcome/info message.
 
-{% api-method-description %}
-This is the main page of the API with a welcome/info message.  
+\
+
+
 If you provide your token, you can see your UUID, rank, rate-limit, rate-limit reset time and your current rate.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=false %}
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-data will be a message and if authenticated your API user info else null
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="data will be a message and if authenticated your API user info else null" %}
 ```yaml
 {
   "status" : 200,
@@ -81,12 +71,9 @@ data will be a message and if authenticated your API user info else null
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="warning" %}
 This action costs **0** rate requests.
 {% endhint %}
-

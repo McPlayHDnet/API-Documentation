@@ -4,42 +4,44 @@ description: Requesting FastBuilder stats
 
 # FastBuilder
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats/{player}?token={token}" %}
-{% api-method-summary %}
-Stats by player and mode
-{% endapi-method-summary %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats/{player}?token={token}" method="get" summary="Stats by player and mode" %}
+{% swagger-description %}
+Get the FastBuilder stats of a player by their 
 
-{% api-method-description %}
-Get the FastBuilder stats of a player by their **UUID or name**.  
-All times are in Milliseconds.  
-If you want to get the average time you need to divide the **totalTime** by the **wins**
-{% endapi-method-description %}
+**UUID or name**
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="mode" type="string" required=true %}
+.
+
+\
+
+
+All times are in Milliseconds.
+
+\
+
+
+If you want to get the average time you need to divide the 
+
+**totalTime**
+
+ by the 
+
+**wins**
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="mode" type="string" %}
 mode you want to get the stats of
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="player" type="string" required=true %}
+{% swagger-parameter in="path" name="player" type="string" %}
 either the name or the UUID of the player
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Response if the player has played the specific game mode
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Response if the player has played the specific game mode" %}
 ```yaml
 {
   "status" : 200,
@@ -64,57 +66,48 @@ Response if the player has played the specific game mode
   }
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=204 %}
-{% api-method-response-example-description %}
-Response if the player has not played the specific game mode
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="204" description="Response if the player has not played the specific game mode" %}
 ```yaml
 {
   "status" : 204,
   "path" : "<string - current path>",
   "timeStamp" : "<string - current time stamp>",
   "processingTime" : <long - time to process the action in ms>,
-  "data" : null
+  "data" : {
+    "playerInfo" : {
+      "uuid" : "<string - UUID of the player>",
+      "name" : "<string - name of the player>",
+      "group" : "<string - group of the player>"
+    },
+    "stats" : null
+  }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/top?token={token}" %}
-{% api-method-summary %}
-Top stats of mode
-{% endapi-method-summary %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/fastbuilder/{mode}/top?token={token}" method="get" summary="Top stats of mode" %}
+{% swagger-description %}
+Returns a map of top FastBuilder players by 
 
-{% api-method-description %}
-Returns a map of top FastBuilder players by **mode** as **\[rank, statsObject\]**
-{% endapi-method-description %}
+**mode**
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="mode" type="string" required=true %}
+ as 
+
+**[rank, statsObject]**
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="mode" type="string" %}
 mode you want to get the stats of
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```yaml
 {
   "status" : 200,
@@ -147,39 +140,23 @@ your authentication token
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="info" %}
 These stats will update every **10** seconds.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/stats?token={token}" %}
-{% api-method-summary %}
-Global stats
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/fastbuilder/stats?token={token}" method="get" summary="Global stats" %}
+{% swagger-description %}
 Returns the sum of all games, wins and blocks placed in FastBuilder.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```yaml
 {
   "status" : 200,
@@ -193,45 +170,27 @@ your authentication token
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="info" %}
 These stats will update every **10** seconds.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/stats/{player}?token={token}" %}
-{% api-method-summary %}
-Global stats of player
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/fastbuilder/stats/{player}?token={token}" method="get" summary="Global stats of player" %}
+{% swagger-description %}
 Returns the sum of all games, wins and blocks placed in FastBuilder by a player.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="player" type="string" required=true %}
+{% swagger-parameter in="path" name="player" type="string" %}
 either the name or the UUID of the player
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```yaml
 {
   "status" : 200,
@@ -245,45 +204,27 @@ your authentication token
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="warning" %}
 This action costs **2** rate requests.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats?token={token}" %}
-{% api-method-summary %}
-Global stats of mode
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/fastbuilder/{mode}/stats?token={token}" method="get" summary="Global stats of mode" %}
+{% swagger-description %}
 Returns the sum of all games, wins and blocks placed in a certain FastBuilder mode.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="mode" type="string" required=true %}
+{% swagger-parameter in="path" name="mode" type="string" %}
 mode you want to get the stats from
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```yaml
 {
   "status" : 200,
@@ -303,33 +244,19 @@ your authentication token
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="info" %}
 These stats will update every **10** seconds.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/fastbuilder/modes" %}
-{% api-method-summary %}
-List of modes
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/fastbuilder/modes" method="get" summary="List of modes" %}
+{% swagger-description %}
 Get a list of all FastBuilder modes
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```yaml
 {
   "status" : 200,
@@ -341,12 +268,9 @@ Get a list of all FastBuilder modes
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="warning" %}
 This action costs **0** rate requests.
 {% endhint %}
-

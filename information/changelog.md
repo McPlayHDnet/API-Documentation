@@ -4,17 +4,23 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.0.10 - 2021/08/11
+
+### Changed
+
+* If a player has not played a specific mode yet but the player exists the response code will still be 204 but the "data" will now return the "playerInfo" object. Just the "stats" object will be "null".
+
 ## 0.0.9 - 2021/06/18
 
 ### Changed
 
-* If a request returns "null" as data \(e.g. the player has been on the server but has never played that specific game you are requesting their stats\) then the status of the request will be "204 - No Content" in order to avoid NullPointerException's in your code by simply asking if the status is 204.
+* If a request returns "null" as data (e.g. the player has been on the server but has never played that specific game you are requesting their stats) then the status of the request will be "204 - No Content" in order to avoid NullPointerException's in your code by simply asking if the status is 204.
 
 ## 0.0.8 - 2021/05/20
 
 ### Changed
 
-* Minesweeper "Global stats \(and of season\)" will no longer return the season in the body because you have to specify the season as path variable if you want to get a specific season and therefore the information is unnecessary.
+* Minesweeper "Global stats (and of season)" will no longer return the season in the body because you have to specify the season as path variable if you want to get a specific season and therefore the information is unnecessary.
 
 ### Fixed
 
@@ -34,7 +40,7 @@ description: Important changes will be listed here
 
 ### Fixed
 
-* If there are two or more players with the same name in the Database \(yes, that can happen and is totally fine\) the API will fetch the new names of all players and return the correct one \(if there still is a player with that name after the cleanup\).
+* If there are two or more players with the same name in the Database (yes, that can happen and is totally fine) the API will fetch the new names of all players and return the correct one (if there still is a player with that name after the cleanup).
 * The Top-Player updater would still use the main MySQL connection resulting in a regular lag of 0.5s every 10 seconds.
 
 ## 0.0.5 - 2021/04/16
@@ -80,6 +86,4 @@ description: Important changes will be listed here
 
 * Main page [https://mcplayhd.net/api/](https://mcplayhd.net/api/)
 * Token authentication **?token={token}**
-
-
 

@@ -4,44 +4,68 @@ description: Requesting Minesweeper stats
 
 # Minesweeper
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/minesweeper/stats/{player}?token={token}&season={season}" %}
-{% api-method-summary %}
-Stats by player \(and season\)
-{% endapi-method-summary %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/minesweeper/stats/{player}?token={token}&season={season}" method="get" summary="Stats by player (and season)" %}
+{% swagger-description %}
+Get the Minesweeper stats of a player by their 
 
-{% api-method-description %}
-Get the Minesweeper stats of a player by their **UUID or name**.  
-All thes are in Milliseconds.  
-If you want to get the acerage time you need to divide the **totalTime** by the **wins**.  
-  
-You don't need to provide a specific **season**. If you don't specify the **season**, the API will return the players stats of the **current season**.
-{% endapi-method-description %}
+**UUID or name**
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="player" type="string" required=true %}
+.
+
+\
+
+
+All thes are in Milliseconds.
+
+\
+
+
+If you want to get the acerage time you need to divide the 
+
+**totalTime **
+
+by the 
+
+**wins**
+
+.
+
+\
+
+
+
+
+\
+
+
+You don't need to provide a specific 
+
+**season**
+
+. If you don't specify the 
+
+**season**
+
+, the API will return the players stats of the 
+
+**current season**
+
+.
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="player" type="string" %}
 either the name or the UUID of the player
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="season" type="string" %}
-number of the season \["1", "2", ...\] or \["-1","all"\] for a sum of games, wins and mines found 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="season" type="string" %}
+number of the season ["1", "2", ...] or ["-1","all"] for a sum of games, wins and mines found 
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Response if the player has stats in that season.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Response if the player has stats in that season." %}
 ```yaml
 {
   "status" : 200,
@@ -66,61 +90,72 @@ Response if the player has stats in that season.
   }
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=204 %}
-{% api-method-response-example-description %}
-Response if the player has no stats in that season.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="204" description="Response if the player has no stats in that season." %}
 ```yaml
 {
   "status" : 204,
   "path" : "<string - current path>",
   "timeStamp" : "<string - current time stamp>",
   "processingTime" : <long - time to process the action in ms>,
-  "data" : null
+  "data" : {
+    "playerInfo" : {
+      "uuid" : "<string - UUID of the player>",
+      "name" : "<string - name of the player>",
+      "group" : "<string - group of the player>"
+    },
+    "stats" : null
+  }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="warning" %}
 Requesting "all" season stats of a player costs **2** rate requests.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/minesweeper/top?token={token}&season={season}" %}
-{% api-method-summary %}
-Top stats \(of season\)
-{% endapi-method-summary %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/minesweeper/top?token={token}&season={season}" method="get" summary="Top stats (of season)" %}
+{% swagger-description %}
+Returns a map of top Minesweeper players of a certain season as 
 
-{% api-method-description %}
-Returns a map of top Minesweeper players of a certain season as **\[rank, statsObject\]**  
-  
-You don't need to provide a specific **season**. If you don't specify the **season**, the API will return the top player map of the **current season**.
-{% endapi-method-description %}
+**[rank, statsObject]**
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+\
+
+
+****
+
+\
+
+
+****
+
+You don't need to provide a specific 
+
+**season**
+
+. If you don't specify the 
+
+**season**
+
+, the API will return the top player map of the 
+
+**current season**
+
+.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="season" type="string" required=false %}
-number of the season \["1", "2", ...\]
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="season" type="string" %}
+number of the season ["1", "2", ...]
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```yaml
 {
   "status" : 200,
@@ -153,45 +188,49 @@ number of the season \["1", "2", ...\]
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="info" %}
 These stats will update every **10** seconds.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/minesweeper/stats?token={token}&season={season}" %}
-{% api-method-summary %}
-Global stats \(and of season\)
-{% endapi-method-summary %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/minesweeper/stats?token={token}&season={season}" method="get" summary="Global stats (and of season)" %}
+{% swagger-description %}
+Returns the sum of all games, wins and mines defused in Minesweeper.
 
-{% api-method-description %}
-Returns the sum of all games, wins and mines defused in Minesweeper.  
-  
-You don't need to provide a specific **season**. If you don't specify the **season**, the API will return the sum of **all seasons**.
-{% endapi-method-description %}
+\
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+
+
+
+\
+
+
+You don't need to provide a specific 
+
+**season**
+
+. If you don't specify the 
+
+**season**
+
+, the API will return the sum of 
+
+**all seasons**
+
+.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="token" type="string" %}
 your authentication token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="season" type="string" required=false %}
-number of the season \["1", "2", ...\] or \["-1", "all"\] for the sum of all seasons
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="season" type="string" %}
+number of the season ["1", "2", ...] or ["-1", "all"] for the sum of all seasons
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```yaml
 {
   "status" : 200,
@@ -205,33 +244,19 @@ number of the season \["1", "2", ...\] or \["-1", "all"\] for the sum of all sea
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="info" %}
 These stats will update every **10** seconds.
 {% endhint %}
 
-{% api-method method="get" host="https://mcplayhd.net/api" path="/minesweeper/season" %}
-{% api-method-summary %}
-Current season
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://mcplayhd.net/api" path="/minesweeper/season" method="get" summary="Current season" %}
+{% swagger-description %}
 Get the current Minesweeper season
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```yaml
 {
   "status" : 200,
@@ -243,10 +268,8 @@ Get the current Minesweeper season
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="info" %}
 These stats will update every **10** seconds.
@@ -255,4 +278,3 @@ These stats will update every **10** seconds.
 {% hint style="warning" %}
 This action costs **0** rate requests.
 {% endhint %}
-

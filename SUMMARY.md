@@ -10,9 +10,9 @@
 ## Stats
 
 * [FastBuilder](stats/fastbuilder.md)
+* [BedWars](stats/bedwars.md)
 * [Minesweeper](stats/minesweeper.md)
 
 ## Player
 
 * [Player Info](player/player-info.md)
-

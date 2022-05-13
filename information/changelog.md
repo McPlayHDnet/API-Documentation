@@ -4,6 +4,25 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.1.0 - 2022/05/14
+
+### Added
+
+* BedWars API endpoint.
+* Swagger-UI found at [https://mcplayhd.net/api/v1/swagger-ui/index.html](https://mcplayhd.net/api/v1/swagger-ui/index.html)
+
+### Changed
+
+* The API's endpoint now is [https://mcplayhd.net/api/v1/](https://mcplayhd.net/api/v1/). This will allow me to push new versions but let the old version stay online when significant changes to the existing nodes are made without everyone immediately having to update their programs.\
+  _The old endpoint_ [_https://mcplayhd.net/api/_](https://mcplayhd.net/api/) _will continue working for some time but will most likely be dropped once the full release of the API comes out. I highly suggest you to switch to `/api/v1/` as soon as possible._
+* Changed the way authentication is made. You should/can no longer provide your token in the URL as a parameter but should switch to using the header for providing your token.\
+  If you are using Java's `HttpsURLConnection` for example, this would look like the following: \
+  `connection.addRequestProperty("Authorization", "Bearer {token}");`\
+  _For all the endpoints that existed before this update, the old authentication will still work until at the latest when the full release of the API comes out._
+* Getting the summed stats of all seasons of a player is no longer done by providing `season="-1"` or `season="all"` but is now done by simply calling `/stats/{player}/all`. This request no longer costs a fixed 2 requests but now costs `min(1, season - 1)` requests.
+* The `TopStats` is no longer a `Map<Integer, Stats>` but is now a `List<Stats>` for all modes that have top stats.
+* The endpoint `/fastbuilder/stats/{player}` now also returns both the player info and the global stats of the player instead of only the global stats.
+
 ## 0.0.10 - 2021/08/11
 
 ### Changed
@@ -66,7 +85,7 @@ description: Important changes will be listed here
 
 ### Changed
 
-* Path to FastBuilder API from `/stats/fastbuilder` to solely `fastbuilder` 
+* Path to FastBuilder API from `/stats/fastbuilder` to solely `fastbuilder`&#x20;
 
 ## 0.0.3 - 2021/04/15
 

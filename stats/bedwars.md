@@ -1,14 +1,14 @@
 ---
-description: Requesting Minesweeper stats
+description: Requesting BedWars stats
 ---
 
-# Minesweeper
+# BedWars
 
-{% swagger src="../.gitbook/assets/api-docs.json" path="/minesweeper/stats/{player}" method="get" %}
+{% swagger src="../.gitbook/assets/api-docs.json" path="/bedwars/stats/{player}" method="get" %}
 [api-docs.json](../.gitbook/assets/api-docs.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/api-docs.json" path="/minesweeper/stats/{player}/all" method="get" %}
+{% swagger src="../.gitbook/assets/api-docs.json" path="/bedwars/stats/{player}/all" method="get" %}
 [api-docs.json](../.gitbook/assets/api-docs.json)
 {% endswagger %}
 
@@ -16,7 +16,7 @@ description: Requesting Minesweeper stats
 Requesting "all" season stats of a player costs **{season-1}** rate requests.
 {% endhint %}
 
-{% swagger src="../.gitbook/assets/api-docs.json" path="/minesweeper/top" method="get" %}
+{% swagger src="../.gitbook/assets/api-docs.json" path="/bedwars/top" method="get" %}
 [api-docs.json](../.gitbook/assets/api-docs.json)
 {% endswagger %}
 
@@ -24,7 +24,7 @@ Requesting "all" season stats of a player costs **{season-1}** rate requests.
 These stats will update every **10** seconds.
 {% endhint %}
 
-{% swagger src="../.gitbook/assets/api-docs.json" path="/minesweeper/stats" method="get" %}
+{% swagger src="../.gitbook/assets/api-docs.json" path="/bedwars/stats" method="get" %}
 [api-docs.json](../.gitbook/assets/api-docs.json)
 {% endswagger %}
 
@@ -32,7 +32,7 @@ These stats will update every **10** seconds.
 These stats will update every **10** seconds.
 {% endhint %}
 
-{% swagger src="../.gitbook/assets/api-docs.json" path="/minesweeper/season" method="get" %}
+{% swagger src="../.gitbook/assets/api-docs.json" path="/bedwars/season" method="get" %}
 [api-docs.json](../.gitbook/assets/api-docs.json)
 {% endswagger %}
 

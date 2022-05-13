@@ -22,6 +22,7 @@ description: Important changes will be listed here
 * Getting the summed stats of all seasons of a player is no longer done by providing `season="-1"` or `season="all"` but is now done by simply calling `/stats/{player}/all`. This request no longer costs a fixed 2 requests but now costs `min(1, season - 1)` requests.
 * The `TopStats` is no longer a `Map<Integer, Stats>` but is now a `List<Stats>` for all modes that have top stats.
 * The endpoint `/fastbuilder/stats/{player}` now also returns both the player info and the global stats of the player instead of only the global stats.
+* Added User- and RateLimit information to the Response-Header.
 
 ## 0.0.10 - 2021/08/11
 

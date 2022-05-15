@@ -16,3 +16,7 @@
 ## Player
 
 * [Player Info](player/player-info.md)
+
+## Objectives
+
+* [Daily](objectives/daily.md)

@@ -4,6 +4,12 @@ description: Important changes will be listed here
 
 # Changelog
 
+## 0.1.1 - 2022/05/14
+
+### Added
+
+* Daily Objectives endpoint.
+
 ## 0.1.0 - 2022/05/14
 
 ### Added
